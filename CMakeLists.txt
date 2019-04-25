@@ -103,7 +103,7 @@ include_directories(
 ## Declare a cpp library
 add_library(resizeimage src/image_handler.cpp
 )
-target_link_libraries(resizeimage ${catkin_LIBRARIES})
+target_link_libraries(resizeimage ${catkin_LIBRARIES} ${OpenCV_LIBS})
 
 ## Declare a cpp executable
 # add_executable(resize_image_node src/resize_image_node.cpp)
@@ -119,7 +119,7 @@ target_link_libraries(resizeimage ${catkin_LIBRARIES})
 
 add_executable(ros_imresize src/resize_image.cpp)
 target_link_libraries(ros_imresize
-   ${catkin_LIBRARIES} resizeimage
+   ${catkin_LIBRARIES} ${OpenCV_LIBS} resizeimage
 )
 
 #############
